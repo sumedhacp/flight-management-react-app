@@ -30,11 +30,14 @@ const AddFlight = () => {
         axios.post("https://host-demo-app.onrender.com/api/add-flight", input).then(
             (response) => {
                 console.log(response.data)
-
+                alert("Flight added successfully")
             }
 
         ).catch(
-
+                (error)=>{
+                    console.error("Error Adding Flight",error)
+                    alert("Failed to add Flight")
+                }
         )
     }
     return (
